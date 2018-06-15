@@ -8,7 +8,6 @@ const Category = ({ navigation }) => (
         <Button title="Food" onPress={() => navigation.navigate('Card')} />
         <Button title="Personality" onPress={() => navigation.navigate('Card')} />
         <Button title="Actors" onPress={() => navigation.navigate('Card')} />
-
     </View>
 );
 

@@ -7,7 +7,9 @@ export const FullStackWords = [
 ]
 
 export const Food = [
-    { bacon: ['breakfast', 'burger', 'pork', 'pig', 'egg'] },
-    { cake: ['birthday', 'dessert', 'frosting', 'layers', 'wedding'] },
-    { pizza: ['artichoke', 'cheese', 'pepporoni', 'dominoes', 'papa johns'] }
+    ['bacon', ['breakfast', 'burger', 'pork', 'pig', 'egg']],
+    ['cake', ['birthday', 'dessert', 'frosting', 'layers', 'wedding']],
+    ['pizza', ['artichoke', 'cheese', 'pepporoni', 'dominoes', 'papa johns']],
+    ['cheese', ['parmesan', 'american', 'swiss', 'chddar', 'burger']]
 ]
+
