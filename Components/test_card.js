@@ -2,13 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 
-const Category = ({ navigation }) => (
+const testCard = ({ navigation }) => (
     <View style={styles.container}>
-        <Text>CATEGORIES</Text>
-        <Button title="Food" onPress={() => navigation.navigate('Card')} />
-        <Button title="Personality" onPress={() => navigation.navigate('Card')} />
-        <Button title="Actors" onPress={() => navigation.navigate('Card')} />
-
+        <Text>swipe works!!</Text>
     </View>
 );
 
@@ -22,4 +18,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Category;
+export default testCard;

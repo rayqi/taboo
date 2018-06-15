@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { createStackNavigator } from 'react-navigation';
 
-const Home = () => (
+const Home = ({ navigation }) => (
     <View style={styles.container}>
-        <Text>GAME OF APP</Text>
-        {/* <Button title="Start" onPress={() =>  } /> */}
+        <Text>WILL BE A FUN GAME GAME</Text>
+        <Button title="Start" onPress={() => navigation.navigate('Category')} />
     </View>
 );
 const styles = StyleSheet.create({
