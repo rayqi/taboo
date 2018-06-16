@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { Food } from './deck'
+import Timer from './Timer'
 
 export default class Card extends React.Component {
     constructor() {
@@ -8,21 +9,19 @@ export default class Card extends React.Component {
         this.state = {
             currentCategory: Food,
             score: 0,
-            index: 0
+            index: 0,
+            timer: 30
         }
         this.shuffleArray = this.shuffleArray.bind(this)
         this.onButtonPressLeft = this.onButtonPressLeft.bind(this)
         this.onButtonPressRight = this.onButtonPressRight.bind(this)
     }
 
-    /*[
-        { bacon: ['breakfast', 'burger', 'pork', 'pig', 'egg'] },
-        { cake: ['birthday', 'dessert', 'frosting', 'layers', 'wedding'] },
-        { pizza: ['artichoke', 'cheese', 'pepporoni', 'dominoes', 'papa johns'] }
-    ] */
+
     componentDidMount = function () {
         this.shuffleArray()
     }
+
 
     //shuffles cards when game starts
     shuffleArray = function () {
@@ -44,7 +43,7 @@ export default class Card extends React.Component {
 
     //if button clicked, index increments to go continue the deck, score is incremented
     onButtonPressRight = function () {
-        this.setState(prevState => ({ score: prevState.score - 1, index: prevState.index + 1 }))
+        this.setState(prevState => ({ score: prevState.score + 1, index: prevState.index + 1 }))
     }
 
 
@@ -53,9 +52,16 @@ export default class Card extends React.Component {
     render() {
         console.log('score', this.score)
         console.log('card', this.state.currentCategory)
+        let cardKey = this.state.currentCategory[this.state.index][0]
+        let cardValues = this.state.currentCategory[this.state.index][1]
         return (
             <View style={styles.container}>
-                <Text>{this.state.currentCategory[this.state.index][0]}</Text>
+                <Text style={{ backgroundColor: 'red' }}><Timer /></Text>
+                <Text>{cardKey}</Text>
+                {cardValues.length > 0 ? cardValues.map(word => {
+                    return <Text>{word}</Text>
+                }) : null}
+                <Text>{this.state.score}</Text>
                 <Button title="wrong" onPress={this.onButtonPressLeft} />
                 <Button title="right" onPress={this.onButtonPressRight} />
             </View>
