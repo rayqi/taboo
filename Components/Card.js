@@ -8,8 +8,8 @@ import testCard from './test_card'
 
 
 export default class Card extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             currentCategory: Food,
             score: 0,
