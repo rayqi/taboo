@@ -9,9 +9,6 @@ const Category = ({ navigation }) => (
         </View>
         <View style={styles.topics}>
             <View>
-                {/* <Button style={styles.buttonOne} title="Food" onPress={() => {
-                    navigation.navigate('Card')
-                }} /> */}
                 <TouchableOpacity onPress={() => {
                     navigation.navigate('Card')
                 }}>
@@ -30,8 +27,6 @@ const Category = ({ navigation }) => (
                 </TouchableOpacity>
 
             </View>
-            {/* <Button style={styles.buttonTwo} title="Personality" onPress={() => navigation.navigate('Card')} />
-            <Button style={styles.buttonThree} title="Actors" onPress={() => navigation.navigate('Card')} /> */}
         </View>
     </View >
 );
@@ -68,15 +63,15 @@ const styles = StyleSheet.create({
     //     backgroundColor: 'blue',
     //     flex: 2
     // },
-    foodImage: {
-        flex: 1
-    },
-    travelImage: {
-        flex: 1
-    },
-    fullstackImage: {
-        flex: 1
-    }
+    // foodImage: {
+    //     flex: 1
+    // },
+    // travelImage: {
+    //     flex: 1
+    // },
+    // fullstackImage: {
+    //     flex: 1
+    // }
 
     // boxContainer: {
     //     flex: 1,

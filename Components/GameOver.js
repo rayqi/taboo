@@ -2,13 +2,13 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 
-const testCard = ({ navigation }) => (
+const GameOver = ({ navigation }) => (
     <View style={styles.container}>
+        <Image source={require('./images/tryAgain.jpg')} />
         <Text>GAME OVER</Text>
+        <Button onPress={() => navigation.navigate('Category')} />
     </View>
-);
-
-
+)
 
 const styles = StyleSheet.create({
     container: {
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default testCard;
+export default GameOver;

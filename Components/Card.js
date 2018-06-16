@@ -4,7 +4,7 @@ import { Food } from './deck'
 import Timer from './Timer'
 import Swiper from 'react-native-deck-swiper';
 import { createStackNavigator } from 'react-navigation';
-import testCard from './test_card'
+import testCard from './GameOver'
 
 
 export default class Card extends React.Component {
@@ -14,7 +14,6 @@ export default class Card extends React.Component {
             currentCategory: Food,
             score: 0,
             index: 0,
-            seconds: 10
         }
         this.shuffleArray = this.shuffleArray.bind(this)
         this.left = this.left.bind(this)
@@ -63,8 +62,6 @@ export default class Card extends React.Component {
 
 
     render() {
-        let cardKey = this.state.currentCategory[this.state.index].main
-        let cardValues = this.state.currentCategory[this.state.index].taboo
         let myCards = Food
         return (
             <View style={styles.container}>
@@ -73,12 +70,10 @@ export default class Card extends React.Component {
                     renderCard={(card) => {
                         return (
                             <View style={styles.card}>
-                                {/* <Text style={{ backgroundColor: 'red' }}>{this.state.seconds}</Text> */}
                                 <Text style={{ backgroundColor: 'red' }}><Timer /></Text>
-
-                                <Text style={styles.text}>{card.main}</Text>
+                                <Text style={styles.main}>{card.main}</Text>
                                 {card.taboo.map(word => {
-                                    return <Text>{word}</Text>
+                                    return <Text style={styles.taboo}>{word}</Text>
                                 })}
                                 <Text>{this.state.score}</Text>
 
@@ -122,19 +117,25 @@ export default class Card extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#F5FCFF"
+        backgroundColor: "bisque"
     },
     card: {
         flex: 1,
         borderRadius: 4,
         borderWidth: 2,
-        borderColor: "#E8E8E8",
+        borderColor: "bisque",
         justifyContent: "center",
         backgroundColor: "white"
     },
-    text: {
+    main: {
         textAlign: "center",
-        fontSize: 50,
-        backgroundColor: "transparent"
+        fontSize: 55,
+        backgroundColor: 'bisque',
+    },
+    taboo: {
+        backgroundColor: 'white',
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 30
     }
 });

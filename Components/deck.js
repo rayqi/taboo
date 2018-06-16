@@ -18,3 +18,38 @@ export const Food = [
     { main: 'mustard', taboo: ['ketchup', 'yellow', 'sauce', 'dijon', 'hot dog'] },
     { main: 'frozen yogurt', taboo: ['basic', 'light', 'pinkberry', 'dessert', 'refreshing'] }
 ]
+
+export const Travel = [
+    { main: 'plane', taboo: [] },
+    { main: 'pilot', taboo: [] },
+    { main: 'airsick', taboo: [] },
+    { main: 'stewardess', taboo: [] },
+    { main: 'time', taboo: [] },
+    { main: 'Paris', taboo: [] },
+    { main: 'China', taboo: [] },
+    { main: 'tourist', taboo: [] },
+    { main: 'currency', taboo: [] },
+    { main: 'conversion', taboo: [] },
+    { main: 'jetlag', taboo: [] },
+]
+
+function fetchApi(array) {
+    let word = ''
+    for (let i = 0; i < array.length; i++) {
+        word = array[i].main
+        console.log('word', word)
+        fetch(`https://api.datamuse.com/words?rel_jjb=${word}`)
+            .then((response) => response.json())
+            .then((responseJson) => {
+                console.log('json', responseJson.slice(0, 4))
+                return responseJson.slice(0, 4);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
+
+}
+
+fetchApi(Travel)

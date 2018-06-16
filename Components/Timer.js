@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native'
+import { Text } from 'react-native';
+import { createStackNavigator } from 'react-navigation';
+import GameOver from './GameOver'
 
 export default class Countdown extends React.Component {
     constructor(props) {
@@ -28,14 +30,3 @@ export default class Countdown extends React.Component {
     }
 
 }
-
-// Countdown.prototype.init = function(){
-//     this.reset();
-//     setInterval(1000)
-// }
-
-// Countdown.prototype.reset = funcion(){
-//     time = this.startTime.split(":")
-//     this.minutes = 
-//}
-
