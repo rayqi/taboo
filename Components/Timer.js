@@ -10,7 +10,6 @@ export default class Countdown extends React.Component {
     }
 
     timer() {
-        console.log(this.state.seconds);
         this.setState({
             seconds: this.state.seconds - 1
         })

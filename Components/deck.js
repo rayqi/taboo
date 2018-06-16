@@ -6,14 +6,15 @@ export const FullStackWords = [
     { query: ['search', 'filter', 'data'] },
 ]
 
+
 export const Food = [
-    ['bacon', ['breakfast', 'burger', 'pork', 'pig', 'egg']],
-    ['cake', ['birthday', 'dessert', 'frosting', 'layers', 'wedding']],
-    ['pizza', ['artichoke', 'cheese', 'pepporoni', 'dominoes', 'papa johns']],
-    ['cheese', ['parmesan', 'american', 'swiss', 'cheddar', 'burger']],
-    ['diet', ['healthy', 'low fat', 'sugarless', 'soda', 'coke']],
-    ['pasta', ['italian', 'spaghetti', 'ravioli', 'penne', 'carbs']],
-    ['soup', ['lentil', 'liquid', 'bread', 'chicken noodle', 'bowl']],
-    ['mustard', ['ketchup', 'yellow', 'sauce', 'dijon', 'hot dog']],
-    ['frozen yogurt', ['basic', 'light', 'pinkberry', 'dessert', 'refreshing']]
+    { main: 'bacon', taboo: ['breakfast', 'burger', 'pork', 'pig', 'egg'] },
+    { main: 'cake', taboo: ['birthday', 'dessert', 'frosting', 'layers', 'wedding'] },
+    { main: 'pizza', taboo: ['artichoke', 'cheese', 'pepporoni', 'dominoes', 'papa johns'] },
+    { main: 'cheese', taboo: ['parmesan', 'american', 'swiss', 'cheddar', 'burger'] },
+    { main: 'diet', taboo: ['healthy', 'low fat', 'sugarless', 'soda', 'coke'] },
+    { main: 'pasta', taboo: ['italian', 'spaghetti', 'ravioli', 'penne', 'carbs'] },
+    { main: 'soup', taboo: ['lentil', 'liquid', 'bread', 'chicken noodle', 'bowl'] },
+    { main: 'mustard', taboo: ['ketchup', 'yellow', 'sauce', 'dijon', 'hot dog'] },
+    { main: 'frozen yogurt', taboo: ['basic', 'light', 'pinkberry', 'dessert', 'refreshing'] }
 ]

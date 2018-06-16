@@ -4,7 +4,7 @@ import { createStackNavigator } from 'react-navigation';
 
 const testCard = ({ navigation }) => (
     <View style={styles.container}>
-        <Text>swipe works!!</Text>
+        <Text>GAME OVER</Text>
     </View>
 );
 
