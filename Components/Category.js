@@ -37,12 +37,12 @@ const styles = StyleSheet.create({
     titleText: {
         fontSize: 40,
         color: 'white',
-        fontWeight: 'bold',
+        fontWeight: '800',
         alignItems: 'center',
         justifyContent: 'center'
     },
     topics: {
-
+        flex: 1
     },
     // foodImage: {
     //     flex: 1

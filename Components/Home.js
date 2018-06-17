@@ -26,10 +26,12 @@ const styles = StyleSheet.create({
         flex: 1
     },
     title: {
-        fontSize: 90,
-        fontWeight: 'bold',
+        fontSize: 86,
+        fontWeight: '800',
         color: 'maroon',
+        marginTop: 70,
         margin: 35,
+        marginBottom: 0,
         textAlign: 'center'
     },
     subtitle: {

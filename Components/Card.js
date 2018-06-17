@@ -53,11 +53,9 @@ export default class Card extends React.Component {
                     renderCard={(card) => {
                         return (
                             <View style={styles.card}>
-                                <Text>{this.state.score}</Text>
-                                <Text style={{ backgroundColor: 'red' }}><Timer /></Text>
                                 <Text style={styles.main}>{card.main}</Text>
                                 {card.taboo.map(word => {
-                                    return <Text style={styles.taboo}>{word}</Text>
+                                    return <Text key={word} style={styles.taboo}>{word}</Text>
                                 })}
                             </View>
                         )
@@ -68,6 +66,10 @@ export default class Card extends React.Component {
                     backgroundColor={'rosybrown'}
                     stackSize={3}>
                 </Swiper>
+                <View style={styles.details}>
+                    <Text style={styles.score}>SCORE:{this.state.score}</Text>
+                    <Text style={styles.timer}>TIME LEFT:<Timer /></Text>
+                </View>
             </View>
         )
     }
@@ -79,12 +81,24 @@ const styles = StyleSheet.create({
         backgroundColor: 'bisque'
     },
     card: {
-        flex: 1,
         borderRadius: 4,
         borderWidth: 2,
         borderColor: 'black',
         justifyContent: 'center',
         backgroundColor: 'white'
+    },
+    details: {
+        alignItems: 'flex-start',
+    },
+    score: {
+        fontSize: 20,
+        color: 'white',
+        fontWeight: '900'
+    },
+    timer: {
+        fontSize: 20,
+        fontWeight: '900',
+        color: 'white'
     },
     main: {
         textAlign: 'center',
