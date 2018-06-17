@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 
 const Category = ({ navigation }) => (
@@ -9,60 +9,41 @@ const Category = ({ navigation }) => (
         </View>
         <View style={styles.topics}>
             <View>
-                <TouchableOpacity onPress={() => {
-                    navigation.navigate('Card')
-                }}>
+                <TouchableOpacity onPress={() => { navigation.navigate('Card') }}>
                     <Image style={styles.foodImage} source={require('./images/foodbutton.png')} />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => {
-                    navigation.navigate('Card')
-                }}>
+                <TouchableOpacity onPress={() => { navigation.navigate('Card') }}>
                     <Image style={styles.travelImage} source={require('./images/vintage-plane.png')} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => {
-                    navigation.navigate('Card')
-                }}>
+
+                <TouchableOpacity onPress={() => { navigation.navigate('Card') }}>
                     <Image style={styles.fullstackImage} source={require('./images/fullstackbutton.png')} />
                 </TouchableOpacity>
-
             </View>
         </View>
     </View >
-);
-
-
+)
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
     title: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'goldenrod'
+        backgroundColor: 'rosybrown'
     },
     titleText: {
         fontSize: 40,
         color: 'white',
+        fontWeight: 'bold',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
-    // topics: {
-    //     flex: 4,
-    // },
-    // buttonOne: {
-    //     backgroundColor: 'green',
-    //     paddingVertical: 300,
-    //     flex: 1
-    // },
-    // buttonTwo: {
-    //     backgroundColor: 'tomato',
-    //     flex: 1
-    // },
-    // buttonThree: {
-    //     backgroundColor: 'blue',
-    //     flex: 2
-    // },
+    topics: {
+
+    },
     // foodImage: {
     //     flex: 1
     // },
@@ -71,27 +52,6 @@ const styles = StyleSheet.create({
     // },
     // fullstackImage: {
     //     flex: 1
-    // }
-
-    // boxContainer: {
-    //     flex: 1,
-    //     alignItems: 'center',
-    //     justifyContent: 'center'
-    // },
-    // boxOne: {
-    //     flex: 3,
-    //     backgroundColor: 'blue',
-    //     justifyContent: 'space-around'
-    // },
-    // boxTwo: {
-    //     flex: 2,
-    //     backgroundColor: 'blue',
-    //     justifyContent: 'space-around'
-    // },
-    // boxThree: {
-    //     flex: 1,
-    //     backgroundColor: 'blue',
-    //     justifyContent: 'space-around'
     // }
 });
 

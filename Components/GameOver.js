@@ -6,7 +6,7 @@ const GameOver = ({ navigation }) => (
     <View style={styles.container}>
         <Image source={require('./images/tryAgain.jpg')} />
         <Text>GAME OVER</Text>
-        <Button onPress={() => navigation.navigate('Category')} />
+        <Button title="Try Again" onPress={() => navigation.navigate('Category')} />
     </View>
 )
 

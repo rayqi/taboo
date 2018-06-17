@@ -6,6 +6,20 @@ export const FullStackWords = [
     { query: ['search', 'filter', 'data'] },
 ]
 
+export const Coding = [
+    { main: 'javascript', taboo: [] },
+    { main: 'binary', taboo: [] },
+    { main: 'algorithm', taboo: [] },
+    { main: 'sequelize', taboo: [] },
+    { main: 'query', taboo: [] },
+    { main: 'database', taboo: [] },
+    { main: 'programming', taboo: [] },
+    { main: 'debugging', taboo: [] },
+    { main: 'code', taboo: [] },
+    { main: 'return', taboo: [] },
+    { main: 'logger', taboo: [] },
+    { main: 'lifecycle', taboo: [] }
+]
 
 export const Food = [
     { main: 'bacon', taboo: ['breakfast', 'burger', 'pork', 'pig', 'egg'] },
@@ -22,16 +36,18 @@ export const Food = [
 export const Travel = [
     { main: 'plane', taboo: [] },
     { main: 'pilot', taboo: [] },
-    { main: 'airsick', taboo: [] },
-    { main: 'stewardess', taboo: [] },
+    { main: 'flying', taboo: [] },
+    { main: 'trip', taboo: [] },
     { main: 'time', taboo: [] },
-    { main: 'Paris', taboo: [] },
-    { main: 'China', taboo: [] },
+    { main: 'leisure', taboo: [] },
+    { main: 'beach', taboo: [] },
     { main: 'tourist', taboo: [] },
     { main: 'currency', taboo: [] },
-    { main: 'conversion', taboo: [] },
-    { main: 'jetlag', taboo: [] },
+    { main: 'translate', taboo: [] },
+    { main: 'summer', taboo: [] },
+    { main: 'train', taboo: [] }
 ]
+
 
 function fetchApi(array) {
     let word = ''
@@ -41,15 +57,13 @@ function fetchApi(array) {
         fetch(`https://api.datamuse.com/words?rel_jjb=${word}`)
             .then((response) => response.json())
             .then((responseJson) => {
-                console.log('json', responseJson.slice(0, 4))
+                console.log('json....', responseJson.slice(0, 4).word)
                 return responseJson.slice(0, 4);
             })
             .catch((error) => {
                 console.error(error);
             });
     }
-
-
 }
 
 fetchApi(Travel)

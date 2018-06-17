@@ -4,7 +4,7 @@ import { Food } from './deck'
 import Timer from './Timer'
 import Swiper from 'react-native-deck-swiper';
 import { createStackNavigator } from 'react-navigation';
-import testCard from './GameOver'
+import GameOver from './GameOver'
 
 
 export default class Card extends React.Component {
@@ -23,19 +23,8 @@ export default class Card extends React.Component {
 
     componentDidMount = function () {
         this.shuffleArray()
-        // this.intervalId = setInterval(this.timer.bind(this), 1000)
     }
-    // timer() {
-    //     console.log(this.state.seconds);
-    //     this.setState(
-    //         prevState => ({ seconds: prevState.seconds - 1 })
-    //     )
-    //     if (this.state.seconds === 0) {
-    //         clearInterval(this.intervalId);
-    //     }
-    // }
 
-    //shuffles cards when game starts
     shuffleArray = function () {
         let array = this.state.currentCategory
         for (let i = array.length - 1; i > 0; i--) {
@@ -47,19 +36,13 @@ export default class Card extends React.Component {
         this.setState({ currentCategory: array })
     }
 
-    //if button clicked, index increments to go continue the deck, score is decremented
     left = function () {
         this.setState(prevState => ({ score: prevState.score - 1, index: prevState.index + 1 }))
     }
 
-
-    //if button clicked, index increments to go continue the deck, score is incremented
     right = function () {
         this.setState(prevState => ({ score: prevState.score + 1, index: prevState.index + 1 }))
     }
-
-
-
 
     render() {
         let myCards = Food
@@ -70,67 +53,43 @@ export default class Card extends React.Component {
                     renderCard={(card) => {
                         return (
                             <View style={styles.card}>
+                                <Text>{this.state.score}</Text>
                                 <Text style={{ backgroundColor: 'red' }}><Timer /></Text>
                                 <Text style={styles.main}>{card.main}</Text>
                                 {card.taboo.map(word => {
                                     return <Text style={styles.taboo}>{word}</Text>
                                 })}
-                                <Text>{this.state.score}</Text>
-
                             </View>
                         )
                     }}
-                    // onSwipedLeft={(cardIndex) => { console.log("swipled left") }}
-                    // onSwipedRight={(cardIndex) => { console.log("swiped right") }}
                     onSwipedLeft={this.left}
                     onSwipedRight={this.right}
-                    // onSwipedAll={({ navigation }) => {
-                    //     console.log('game over')
-                    //     navigation.navigate('testCard')
-                    // }}
                     cardIndex={0}
-                    backgroundColor={'#4FD0E9'}
+                    backgroundColor={'rosybrown'}
                     stackSize={3}>
                 </Swiper>
-                {/* <Text style={{ backgroundColor: 'red' }}><Timer /></Text>
-                <Text>{cardKey}</Text>
-                {cardValues.length > 0 ? cardValues.map(word => {
-                    return <Text>{word}</Text>
-                }) : null}
-                <Text>{this.state.score}</Text>
-                <Button title="wrong" onPress={this.onButtonPressLeft} />
-                <Button title="right" onPress={this.onButtonPressRight} /> */}
             </View>
         )
     }
 }
 
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         backgroundColor: '#fff',
-//         alignItems: 'center',
-//         justifyContent: 'center',
-//     },
-// });
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "bisque"
+        backgroundColor: 'bisque'
     },
     card: {
         flex: 1,
         borderRadius: 4,
         borderWidth: 2,
-        borderColor: "bisque",
-        justifyContent: "center",
-        backgroundColor: "white"
+        borderColor: 'black',
+        justifyContent: 'center',
+        backgroundColor: 'white'
     },
     main: {
-        textAlign: "center",
+        textAlign: 'center',
         fontSize: 55,
-        backgroundColor: 'bisque',
+        backgroundColor: 'maroon',
     },
     taboo: {
         backgroundColor: 'white',
