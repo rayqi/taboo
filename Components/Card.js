@@ -46,6 +46,8 @@ export default class Card extends React.Component {
 
     render() {
         let myCards = Food
+        console.log('Card this.props', this.props)
+        console.log('Card this.state', this.state)
         return (
             <View style={styles.container}>
                 <Swiper
@@ -68,7 +70,7 @@ export default class Card extends React.Component {
                 </Swiper>
                 <View style={styles.details}>
                     <Text style={styles.score}>SCORE:{this.state.score}</Text>
-                    <Text style={styles.timer}>TIME LEFT:<Timer /></Text>
+                    <Text style={styles.timer}>TIME LEFT:<Timer time={this.state} /></Text>
                 </View>
             </View>
         )

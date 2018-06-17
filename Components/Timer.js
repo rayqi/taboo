@@ -12,9 +12,10 @@ export default class Countdown extends React.Component {
     }
 
     timer() {
-        this.setState({
-            seconds: this.state.seconds - 1
-        })
+        // console.log('timer func this.props', this.props)
+        // console.log('anything??', this.props.time)
+        // console.log('timer this.state', this.state.seconds)
+        this.setState(prevState => ({ seconds: prevState.seconds - 1 }))
         if (this.state.seconds === 0) {
             clearInterval(this.intervalId);
         }
@@ -22,9 +23,13 @@ export default class Countdown extends React.Component {
 
     componentDidMount() {
         this.intervalId = setInterval(this.timer.bind(this), 1000)
+
     }
 
+
     render() {
+        // const { navigate } = this.props.navigation
+        // console.log('Timer this.state', this.state)
         return (
             <Text title="seconds">{this.state.seconds}</Text>)
     }
