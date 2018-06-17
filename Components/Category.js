@@ -1,16 +1,20 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
+import { Food, Coding, Travel } from './deck'
+
 
 class Category extends React.Component {
     constructor() {
         super()
-        this.state = { currentCategory: {} }
+        this.state = { currentCategory: '' }
     }
 
-    changeState(item) {
-        this.setState({ currentCategory: item })
-    }
+    // changeState(item) {
+
+    //     console.log("############")
+    //     this.setState(prevState => ({ currentCategory: prevState.currentCategory }))
+    // }
 
     render() {
         const { navigate } = this.props.navigation;
@@ -21,20 +25,23 @@ class Category extends React.Component {
                         <Text style={styles.titleText}>CATEGORIES</Text>
                     </View>
 
-                    <View style={[styles.topicContainer, styles.foodImage]}>
-                        <TouchableOpacity onPress={() => { navigate('Card') }}>
+                    <View style={[styles.topicContainer, styles.foodImage]} >
+                        <TouchableOpacity onPress={() => {
+                            navigate('Card', { category: Food })
+                            // navigate('Category', { category: "dummy" })
+                        }}>
                             <Image style={styles.foodImage} source={require('./images/foodbutton.png')} />
                         </TouchableOpacity>
                     </View>
 
                     <View style={[styles.topicContainer, styles.fullStackImage]}>
-                        <TouchableOpacity onPress={() => { navigate('Card') }}>
+                        <TouchableOpacity onPress={() => { navigate('Card', { category: Coding }) }}>
                             <Image style={styles.fullstackImage} source={require('./images/fullstackbutton.png')} />
                         </TouchableOpacity>
                     </View>
 
                     <View style={[styles.topicContainer, styles.travelImage]}>
-                        <TouchableOpacity onPress={() => { navigate('Card') }}>
+                        <TouchableOpacity onPress={() => { navigate('Card', { category: Travel }) }}>
                             <Image style={styles.travelImage} source={require('./images/vintage-plane.png')} />
                         </TouchableOpacity>
                     </View>

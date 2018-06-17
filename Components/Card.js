@@ -11,18 +11,21 @@ export default class Card extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentCategory: Food,
+            currentCategory: '',
             score: 0,
             index: 0,
+            seconds: 3
         }
         this.shuffleArray = this.shuffleArray.bind(this)
         this.left = this.left.bind(this)
         this.right = this.right.bind(this)
+        console.log('Card props', this.props)
     }
 
 
     componentDidMount = function () {
         this.shuffleArray()
+        this.intervalId = setInterval(this.timer.bind(this), 1000)
     }
 
     shuffleArray = function () {
@@ -36,6 +39,14 @@ export default class Card extends React.Component {
         this.setState({ currentCategory: array })
     }
 
+    timer() {
+        this.setState(prevState => ({ seconds: prevState.seconds - 1 }))
+        if (this.state.seconds === 0) {
+            clearInterval(this.intervalId);
+            this.props.navigation.navigate('GameOver', { score: this.state.score })
+        }
+    }
+
     left = function () {
         this.setState(prevState => ({ score: prevState.score - 1, index: prevState.index + 1 }))
     }
@@ -45,9 +56,8 @@ export default class Card extends React.Component {
     }
 
     render() {
-        let myCards = Food
-        console.log('Card this.props', this.props)
-        console.log('Card this.state', this.state)
+        let myCards = this.props.navigation.state.params.category
+        console.log('Card this.props ******', this.props.navigation.state.params)
         return (
             <View style={styles.container}>
                 <Swiper
@@ -70,7 +80,7 @@ export default class Card extends React.Component {
                 </Swiper>
                 <View style={styles.details}>
                     <Text style={styles.score}>SCORE:{this.state.score}</Text>
-                    <Text style={styles.timer}>TIME LEFT:<Timer time={this.state} /></Text>
+                    <Text style={styles.timer}>TIME LEFT:{this.state.seconds}</Text>
                 </View>
             </View>
         )

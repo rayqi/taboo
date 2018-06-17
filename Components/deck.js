@@ -1,24 +1,24 @@
-export const FullStackWords = [
-    { fs: ['academy', 'coding', 'school'] },
-    { algorithm: ['codewars', 'kyu', 'solving', 'strategy'] },
-    { redux: ['store', 'action creator', 'reducer'] },
-    { binary: ['queue', 'linked list', 'data structure', 'stack', 'hash tables'] },
-    { query: ['search', 'filter', 'data'] },
-]
+// export const FullStackWords = [
+//     { fs: ['academy', 'coding', 'school'] },
+//     { algorithm: ['codewars', 'kyu', 'solving', 'strategy'] },
+//     { redux: ['store', 'action creator', 'reducer'] },
+//     { binary: ['queue', 'linked list', 'data structure', 'stack', 'hash tables'] },
+//     { query: ['search', 'filter', 'data'] },
+// ]
 
 export const Coding = [
-    { main: 'javascript', taboo: [] },
-    { main: 'binary', taboo: [] },
-    { main: 'algorithm', taboo: [] },
-    { main: 'sequelize', taboo: [] },
-    { main: 'query', taboo: [] },
-    { main: 'database', taboo: [] },
-    { main: 'programming', taboo: [] },
-    { main: 'debugging', taboo: [] },
-    { main: 'code', taboo: [] },
-    { main: 'return', taboo: [] },
-    { main: 'logger', taboo: [] },
-    { main: 'lifecycle', taboo: [] }
+    { main: 'javascript', taboo: ['academy', 'coding', 'school'] },
+    { main: 'binary', taboo: ['codewars', 'kyu', 'solving', 'strategy'] },
+    // { main: 'algorithm', taboo: [] },
+    // { main: 'sequelize', taboo: [] },
+    // { main: 'query', taboo: [] },
+    // { main: 'database', taboo: [] },
+    // { main: 'programming', taboo: [] },
+    // { main: 'debugging', taboo: [] },
+    // { main: 'code', taboo: [] },
+    // { main: 'return', taboo: [] },
+    // { main: 'logger', taboo: [] },
+    // { main: 'lifecycle', taboo: [] }
 ]
 
 export const Food = [
@@ -34,18 +34,18 @@ export const Food = [
 ]
 
 export const Travel = [
-    { main: 'plane', taboo: [] },
-    { main: 'pilot', taboo: [] },
-    { main: 'flying', taboo: [] },
-    { main: 'trip', taboo: [] },
-    { main: 'time', taboo: [] },
-    { main: 'leisure', taboo: [] },
-    { main: 'beach', taboo: [] },
-    { main: 'tourist', taboo: [] },
-    { main: 'currency', taboo: [] },
-    { main: 'translate', taboo: [] },
-    { main: 'summer', taboo: [] },
-    { main: 'train', taboo: [] }
+    { main: 'plane', taboo: ['shopping', 'eating'] },
+    { main: 'pilot', taboo: ['something', 'else'] },
+    // { main: 'flying', taboo: [] },
+    // { main: 'trip', taboo: [] },
+    // { main: 'time', taboo: [] },
+    // { main: 'leisure', taboo: [] },
+    // { main: 'beach', taboo: [] },
+    // { main: 'tourist', taboo: [] },
+    // { main: 'currency', taboo: [] },
+    // { main: 'translate', taboo: [] },
+    // { main: 'summer', taboo: [] },
+    // { main: 'train', taboo: [] }
 ]
 
 
