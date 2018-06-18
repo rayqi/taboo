@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-import { Food, Coding, Travel } from './deck'
+import { Food, Coding, Travel, getData } from './deck'
+
 
 
 class Category extends React.Component {
@@ -35,7 +36,14 @@ class Category extends React.Component {
                     </View>
 
                     <View style={[styles.topicContainer, styles.travelImage]}>
-                        <TouchableOpacity onPress={() => { navigate('Card', { category: Travel }) }}>
+                        <TouchableOpacity onPress={() => {
+                            const myFetchedCategory = getData('travel');
+                            // console.log('***', getData("Travel"));
+                            myFetchedCategory.then(data => {
+                                navigate('Card', { category: data })
+                            })
+
+                        }}>
                             <Image style={styles.travelImage} source={require('./images/vintage-plane.png')} />
                         </TouchableOpacity>
                     </View>
