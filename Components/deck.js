@@ -4,14 +4,14 @@ export const Coding = [
     { main: 'binary', taboo: ['search', 'tree', 'data structure', 'breadth', 'nightmare'] },
     { main: 'algorithm', taboo: ['codewars', 'kyu', 'solving', 'strategy', 'rule'] },
     { main: 'sequelize', taboo: ['search', 'query', 'data', 'eager loading', 'filter'] },
-    { main: 'query', taboo: ['search', 'filter', 'select', 'extract', 'information'] },
-    { main: 'database', taboo: ['model', 'server', 'information', 'validation', 'postico'] },
-    { main: 'programming', taboo: ['life', 'code', 'debugging', 'web development', 'engineer'] },
-    { main: 'debugging', taboo: ['solve', 'annoying', 'look through', 'review', 'error'] },
-    { main: 'code', taboo: ['wars', 'games', 'communication', 'hard', 'da vinci'] },
-    { main: 'return', taboo: ['end', 'console.log', 'bottom', 'final', 'function'] },
-    { main: 'Fullstack', taboo: ['academy', 'school', 'where', 'here', 'Grace Hopper'] },
-    { main: 'lifecycle', taboo: ['component', 'mount', 'flow', 'loading', 'react'] }
+    // { main: 'query', taboo: ['search', 'filter', 'select', 'extract', 'information'] },
+    // { main: 'database', taboo: ['model', 'server', 'information', 'validation', 'postico'] },
+    // { main: 'programming', taboo: ['life', 'code', 'debugging', 'web development', 'engineer'] },
+    // { main: 'debugging', taboo: ['solve', 'annoying', 'look through', 'review', 'error'] },
+    // { main: 'code', taboo: ['wars', 'games', 'communication', 'hard', 'da vinci'] },
+    // { main: 'return', taboo: ['end', 'console.log', 'bottom', 'final', 'function'] },
+    // { main: 'Fullstack', taboo: ['academy', 'school', 'where', 'here', 'Grace Hopper'] },
+    // { main: 'lifecycle', taboo: ['component', 'mount', 'flow', 'loading', 'react'] }
 ]
 
 export const Food = [

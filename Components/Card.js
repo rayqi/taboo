@@ -31,7 +31,6 @@ export default class Card extends React.Component {
 
     componentWillMount = function () {
         this.shuffleArray()
-        this.isMounted = true;
     }
 
     componentDidMount = function () {
@@ -46,10 +45,8 @@ export default class Card extends React.Component {
         }
     }
 
-
-
     componentWillUnmount = function () {
-        this.isMounted = false;
+        clearInterval(this.interval)
     }
 
     left = function () {
@@ -78,7 +75,7 @@ export default class Card extends React.Component {
                     }}
                     onSwipedLeft={this.left}
                     onSwipedRight={this.right}
-                    cardIndex={0}
+                    cardIndex={this.state.index}
                     backgroundColor={'rosybrown'}
                     stackSize={3}>
                 </Swiper>
