@@ -1,24 +1,17 @@
-// export const FullStackWords = [
-//     { fs: ['academy', 'coding', 'school'] },
-//     { algorithm: ['codewars', 'kyu', 'solving', 'strategy'] },
-//     { redux: ['store', 'action creator', 'reducer'] },
-//     { binary: ['queue', 'linked list', 'data structure', 'stack', 'hash tables'] },
-//     { query: ['search', 'filter', 'data'] },
-// ]
 
 export const Coding = [
-    { main: 'javascript', taboo: ['academy', 'coding', 'school'] },
-    { main: 'binary', taboo: ['codewars', 'kyu', 'solving', 'strategy'] },
-    // { main: 'algorithm', taboo: [] },
-    // { main: 'sequelize', taboo: [] },
-    // { main: 'query', taboo: [] },
-    // { main: 'database', taboo: [] },
-    // { main: 'programming', taboo: [] },
-    // { main: 'debugging', taboo: [] },
-    // { main: 'code', taboo: [] },
-    // { main: 'return', taboo: [] },
-    // { main: 'logger', taboo: [] },
-    // { main: 'lifecycle', taboo: [] }
+    { main: 'javascript', taboo: ['language', 'coding', 'python', 'ruby', 'front-end'] },
+    { main: 'binary', taboo: ['search', 'tree', 'data structure', 'breadth', 'nightmare'] },
+    { main: 'algorithm', taboo: ['codewars', 'kyu', 'solving', 'strategy', 'rule'] },
+    { main: 'sequelize', taboo: ['search', 'query', 'data', 'eager loading', 'filter'] },
+    { main: 'query', taboo: ['search', 'filter', 'select', 'extract', 'information'] },
+    { main: 'database', taboo: ['model', 'server', 'information', 'validation', 'postico'] },
+    { main: 'programming', taboo: ['life', 'code', 'debugging', 'web development', 'engineer'] },
+    { main: 'debugging', taboo: ['solve', 'annoying', 'look through', 'review', 'error'] },
+    { main: 'code', taboo: ['wars', 'games', 'communication', 'hard', 'da vinci'] },
+    { main: 'return', taboo: ['end', 'console.log', 'bottom', 'final', 'function'] },
+    { main: 'Fullstack', taboo: ['academy', 'school', 'where', 'here', 'Grace Hopper'] },
+    { main: 'lifecycle', taboo: ['component', 'mount', 'flow', 'loading', 'react'] }
 ]
 
 export const Food = [
@@ -26,27 +19,29 @@ export const Food = [
     { main: 'cake', taboo: ['birthday', 'dessert', 'frosting', 'layers', 'wedding'] },
     { main: 'pizza', taboo: ['artichoke', 'cheese', 'pepporoni', 'dominoes', 'papa johns'] },
     { main: 'cheese', taboo: ['parmesan', 'american', 'swiss', 'cheddar', 'burger'] },
-    // { main: 'diet', taboo: ['healthy', 'low fat', 'sugarless', 'soda', 'coke'] },
-    // { main: 'pasta', taboo: ['italian', 'spaghetti', 'ravioli', 'penne', 'carbs'] },
-    // { main: 'soup', taboo: ['lentil', 'liquid', 'bread', 'chicken noodle', 'bowl'] },
-    // { main: 'mustard', taboo: ['ketchup', 'yellow', 'sauce', 'dijon', 'hot dog'] },
-    // { main: 'frozen yogurt', taboo: ['basic', 'light', 'pinkberry', 'dessert', 'refreshing'] }
+    { main: 'diet', taboo: ['healthy', 'low fat', 'sugarless', 'soda', 'coke'] },
+    { main: 'pasta', taboo: ['italian', 'spaghetti', 'ravioli', 'penne', 'carbs'] },
+    { main: 'soup', taboo: ['lentil', 'liquid', 'bread', 'chicken noodle', 'bowl'] },
+    { main: 'mustard', taboo: ['ketchup', 'yellow', 'sauce', 'dijon', 'hot dog'] },
+    { main: 'frozen yogurt', taboo: ['basic', 'light', 'pinkberry', 'dessert', 'refreshing'] }
 ]
 
 export const Travel = [
-    { main: 'plane', taboo: ['shopping', 'eating'] },
-    { main: 'pilot', taboo: ['something', 'else'] },
-    // { main: 'flying', taboo: [] },
-    // { main: 'trip', taboo: [] },
-    // { main: 'time', taboo: [] },
-    // { main: 'leisure', taboo: [] },
-    // { main: 'beach', taboo: [] },
-    // { main: 'tourist', taboo: [] },
-    // { main: 'currency', taboo: [] },
-    // { main: 'translate', taboo: [] },
-    // { main: 'summer', taboo: [] },
-    // { main: 'train', taboo: [] }
+    { main: 'plane', taboo: ['air', 'fly', 'ticket', 'travel', 'helicopter'] },
+    { main: 'pilot', taboo: ['driver', 'cockpit', 'plane', 'in charge', 'beta'] },
+    { main: 'flying', taboo: ['air', 'take off', 'plane', 'birds', 'wings'] },
+    { main: 'trip', taboo: ['planner', 'euro', 'school bus', 'destination', 'fall'] },
+    { main: 'time', taboo: ['zone', 'watch', 'jetlag', 'change', 'hours'] },
+    { main: 'leisure', taboo: ['pleasure', 'purpose', 'free', 'summer', 'christmas'] },
+    { main: 'beach', taboo: ['tropical', 'sand', 'water', 'island', 'relax'] },
+    { main: 'tourist', taboo: ['slow walker', 'annoying', 'hate', 'travel', 'foreign'] },
+    { main: 'currency', taboo: ['money', 'pounds', 'yuan', 'euro', 'dollar'] },
+    { main: 'translate', taboo: ['english', 'convert', 'chinese', 'language', 'understand'] },
+    { main: 'summer', taboo: ['fall', 'autumn', 'season', 'spring', 'winter'] },
+    { main: 'train', taboo: ['mta', 'stops', 'bus', 'rail', 'path'] }
 ]
+
+// { main: 'train', taboo: [] }
 
 
 function fetchApi(array) {

@@ -19,10 +19,6 @@ const GameOver = ({ navigation }) => (
 
 const styles = StyleSheet.create({
     container: {
-        // alignItems: 'center',
-        // justifyContent: 'center',
-        // display: 'flex',
-        // flexDirection: 'column'
         flex: 1
     },
     details: {
@@ -30,7 +26,6 @@ const styles = StyleSheet.create({
         marginLeft: 15,
         marginRight: 15,
         alignItems: 'center',
-        // justifyContent: 'center'
     },
     gameover: {
         marginTop: 40,
@@ -52,15 +47,6 @@ const styles = StyleSheet.create({
         marginBottom: 30,
         marginLeft: 30
     }
-    // gameover: {
-    //     flex: 1
-    // },
-    // score: {
-    //     flex: 1
-    // },
-    // button: {
-    //     flex: 1
-    // }
 });
 
 export default GameOver;

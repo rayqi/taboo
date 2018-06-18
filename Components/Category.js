@@ -10,12 +10,6 @@ class Category extends React.Component {
         this.state = { currentCategory: '' }
     }
 
-    // changeState(item) {
-
-    //     console.log("############")
-    //     this.setState(prevState => ({ currentCategory: prevState.currentCategory }))
-    // }
-
     render() {
         const { navigate } = this.props.navigation;
         return (
@@ -65,16 +59,12 @@ const styles = StyleSheet.create({
     },
     title: {
         flex: .222,
-        // justifyContent: 'center',
-        // alignItems: 'center',
         backgroundColor: 'rosybrown'
     },
     titleText: {
         fontSize: 40,
         color: 'white',
         fontWeight: 'bold',
-        // alignItems: 'center',
-        // justifyContent: 'center'
     },
     foodImage: {
         flex: 1

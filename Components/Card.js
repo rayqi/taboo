@@ -1,7 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import { Food } from './deck'
-import Timer from './Timer'
+import { StyleSheet, Text, View } from 'react-native';
 import Swiper from 'react-native-deck-swiper';
 import { createStackNavigator } from 'react-navigation';
 import GameOver from './GameOver'
@@ -11,40 +9,47 @@ export default class Card extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentCategory: '',
+            currentCategory: [],
             score: 0,
             index: 0,
-            seconds: 3
+            seconds: 6
         }
         this.shuffleArray = this.shuffleArray.bind(this)
         this.left = this.left.bind(this)
         this.right = this.right.bind(this)
-        console.log('Card props', this.props)
-    }
-
-
-    componentDidMount = function () {
-        this.shuffleArray()
-        this.intervalId = setInterval(this.timer.bind(this), 1000)
     }
 
     shuffleArray = function () {
-        let array = this.state.currentCategory
+        let array = this.props.navigation.state.params.category
         for (let i = array.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1));
             let temp = array[i];
             array[i] = array[j];
             array[j] = temp;
         }
-        this.setState({ currentCategory: array })
+    }
+
+    componentWillMount = function () {
+        this.shuffleArray()
+        this.isMounted = true;
+    }
+
+    componentDidMount = function () {
+        this.interval = setInterval(this.timer.bind(this), 1000)
     }
 
     timer() {
         this.setState(prevState => ({ seconds: prevState.seconds - 1 }))
         if (this.state.seconds === 0) {
-            clearInterval(this.intervalId);
+            clearInterval(this.interval);
             this.props.navigation.navigate('GameOver', { score: this.state.score })
         }
+    }
+
+
+
+    componentWillUnmount = function () {
+        this.isMounted = false;
     }
 
     left = function () {
@@ -57,7 +62,6 @@ export default class Card extends React.Component {
 
     render() {
         let myCards = this.props.navigation.state.params.category
-        console.log('Card this.props ******', this.props.navigation.state.params)
         return (
             <View style={styles.container}>
                 <Swiper
@@ -82,6 +86,7 @@ export default class Card extends React.Component {
                     <Text style={styles.score}>SCORE:{this.state.score}</Text>
                     <Text style={styles.timer}>TIME LEFT:{this.state.seconds}</Text>
                 </View>
+
             </View>
         )
     }
