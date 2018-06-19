@@ -23,14 +23,18 @@ class Category extends React.Component {
                     <View style={[styles.topicContainer, styles.foodImage]} >
                         <TouchableOpacity onPress={() => {
                             navigate('Card', { category: Food })
-                            // navigate('Category', { category: "dummy" })
                         }}>
                             <Image style={styles.foodImage} source={require('./images/foodbutton.png')} />
                         </TouchableOpacity>
                     </View>
 
                     <View style={[styles.topicContainer, styles.fullStackImage]}>
-                        <TouchableOpacity onPress={() => { navigate('Card', { category: Coding }) }}>
+                        <TouchableOpacity onPress={() => {
+                            const myFetchedCategory = getData('javascript');
+                            myFetchedCategory.then(data => {
+                                navigate('Card', { category: data })
+                            })
+                        }}>
                             <Image style={styles.fullstackImage} source={require('./images/fullstackbutton.png')} />
                         </TouchableOpacity>
                     </View>
@@ -38,11 +42,9 @@ class Category extends React.Component {
                     <View style={[styles.topicContainer, styles.travelImage]}>
                         <TouchableOpacity onPress={() => {
                             const myFetchedCategory = getData('travel');
-                            // console.log('***', getData("Travel"));
                             myFetchedCategory.then(data => {
                                 navigate('Card', { category: data })
                             })
-
                         }}>
                             <Image style={styles.travelImage} source={require('./images/vintage-plane.png')} />
                         </TouchableOpacity>

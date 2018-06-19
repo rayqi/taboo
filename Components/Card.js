@@ -12,7 +12,7 @@ export default class Card extends React.Component {
             currentCategory: [],
             score: 0,
             index: 0,
-            seconds: 6
+            seconds: 30
         }
         this.shuffleArray = this.shuffleArray.bind(this)
         this.left = this.left.bind(this)
@@ -80,8 +80,8 @@ export default class Card extends React.Component {
                     stackSize={3}>
                 </Swiper>
                 <View style={styles.details}>
-                    <Text style={styles.score}>SCORE:{this.state.score}</Text>
-                    <Text style={styles.timer}>TIME LEFT:{this.state.seconds}</Text>
+                    <Text style={styles.score}>SCORE: {this.state.score}</Text>
+                    <Text style={styles.timer}>TIME LEFT: {this.state.seconds}</Text>
                 </View>
 
             </View>

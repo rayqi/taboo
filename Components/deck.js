@@ -41,17 +41,15 @@ export const Travel = [
     { main: 'train', taboo: ['mta', 'stops', 'bus', 'rail', 'path'] }
 ]
 
-// { main: '', taboo: [] }
-
-// 1. Travel, Food, Coding
+// Travel, Food, Coding
 
 export function getData(keyWord) {
     const results = [];
-    const apiURL = "https://api.datamuse.com/words?rel_jjb=";
+    const apiURL = "https://api.datamuse.com/words?ml=";
     return fetch(`${apiURL}${keyWord}`)
-        .then((response) => response.json())
+        .then((res) => res.json())
         .then((data) => {
-            return data.slice(0, 5).map((obj) => {
+            return data.slice(0, 15).map((obj) => {
                 return obj.word;
             })
         })
@@ -82,22 +80,3 @@ export function getData(keyWord) {
 
 
 }
-
-// getData("Travel");
-
-// function fetchApi(array) {
-//     let word = ''
-//     for (let i = 0; i < array.length; i++) {
-//         word = array[i].main
-//         fetch(`https://api.datamuse.com/words?rel_jjb=${word}`)
-//             .then((response) => response.json())
-//             .then((responseJson) => {
-//                 return responseJson.slice(0, 4);
-//             })
-//             .catch((error) => {
-//                 console.error(error);
-//             });
-//     }
-// }
-
-// fetchApi(Travel)
